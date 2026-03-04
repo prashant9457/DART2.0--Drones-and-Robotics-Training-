@@ -3,10 +3,10 @@ import { motion } from 'motion/react';
 import './SpeakersTrainers.css';
 
 // Import images
-import aviocianImg from '../assets/speakers/aviocian.png';
-import jyotindraImg from '../assets/speakers/jyotindra.png';
-import suhaibImg from '../assets/speakers/suhaib.png';
-import skSahaImg from '../assets/speakers/sk_saha.png';
+import aviocianImg from '../assets/Speakers/aviocian.png';
+import jyotindraImg from '../assets/Speakers/jyotindra.png';
+import suhaibImg from '../assets/Speakers/suhaib.png';
+import skSahaImg from '../assets/Speakers/sk_saha.png';
 
 interface Speaker {
   id: number;
