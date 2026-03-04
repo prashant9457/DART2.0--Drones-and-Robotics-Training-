@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import './Dart1.css';
 
 // Importing all 21 images from the legacy assets folder
-import img1 from '../assets/Dart1Legacy/Copy of DSC_3918.JPG';
-import img2 from '../assets/Dart1Legacy/Copy of DSC_4096.JPG';
-import img3 from '../assets/Dart1Legacy/Copy of DSC_4115.JPG';
-import img4 from '../assets/Dart1Legacy/Copy of DSC_4167.JPG';
-import img5 from '../assets/Dart1Legacy/Copy of DSC_4231.JPG';
-import img6 from '../assets/Dart1Legacy/Copy of DSC_4259.JPG';
-import img7 from '../assets/Dart1Legacy/Copy of DSC_4265.JPG';
+import img1 from '../assets/Dart1Legacy/Copy_of_DSC_3918.JPG';
+import img2 from '../assets/Dart1Legacy/Copy_of_DSC_4096.JPG';
+import img3 from '../assets/Dart1Legacy/Copy_of_DSC_4115.JPG';
+import img4 from '../assets/Dart1Legacy/Copy_of_DSC_4167.JPG';
+import img5 from '../assets/Dart1Legacy/Copy_of_DSC_4231.JPG';
+import img6 from '../assets/Dart1Legacy/Copy_of_DSC_4259.JPG';
+import img7 from '../assets/Dart1Legacy/Copy_of_DSC_4265.JPG';
 import img8 from '../assets/Dart1Legacy/DSC00434.JPG';
 import img9 from '../assets/Dart1Legacy/DSC00483.JPG';
 import img10 from '../assets/Dart1Legacy/DSC00505.JPG';

@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { StaggeredMenu, type StaggeredMenuItem } from './StaggeredMenu';
 import './Sidebar.css';
 
 const Sidebar: React.FC = () => {
-    const [activeSection, setActiveSection] = useState('home');
-
     useEffect(() => {
         const handleScroll = () => {
             const sections = ['home', 'what-is-dart', 'why-attend', 'skills', 'timeline', 'speakers', 'team', 'dart1', 'faqs'];
@@ -16,7 +14,7 @@ const Sidebar: React.FC = () => {
                     const offsetTop = element.offsetTop;
                     const height = element.offsetHeight;
                     if (scrollPosition >= offsetTop && scrollPosition < offsetTop + height) {
-                        setActiveSection(section);
+                        // setActiveSection logic removed as it's currently unused in UI
                     }
                 }
             }
