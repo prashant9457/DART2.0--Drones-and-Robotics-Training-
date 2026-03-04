@@ -1,95 +1,138 @@
 :root {
     --primary: #ff1e1e;
-    --bg-dark: #09090b;
+    --primary-bright: #ff4d4d;
+    --primary-dark: #cc0000;
+    --bg-dark: #000000;
+    --card-surface: rgba(25, 10, 10, 0.4);
     --text-main: #ffffff;
-    --text-muted: rgba(255, 255, 255, 0.4);
+    --text-muted: rgba(255, 255, 255, 0.5);
     --mono-font: 'JetBrains Mono', monospace;
 }
 
-.taskforce-section {
-    padding: 8rem 2rem;
+.taskforce-section.red-theme {
+    padding: 0 0 12rem 0;
     background-color: var(--bg-dark);
-    min-height: 800px;
+    min-height: 100vh;
     position: relative;
     overflow: clip;
 }
 
+.taskforce-banner-wrap {
+    width: 100%;
+    height: 700px;
+    position: relative;
+    overflow: hidden;
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.taskforce-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.8) brightness(0.9) contrast(1);
+    /* Faded, atmospheric filters */
+    opacity: 0.65;
+    /* Reduced opacity for faded effect */
+}
+
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 10%, rgba(0, 0, 0, 0.7) 80%, var(--bg-dark));
+}
+
+.red-theme-decor {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.red-glow-1 {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 40vw;
+    height: 40vw;
+    background: radial-gradient(circle, rgba(255, 30, 30, 0.1) 0%, transparent 70%);
+    filter: blur(80px);
+}
+
+.red-glow-2 {
+    position: absolute;
+    bottom: 30%;
+    right: 5%;
+    width: 30vw;
+    height: 30vw;
+    background: radial-gradient(circle, rgba(255, 30, 30, 0.08) 0%, transparent 70%);
+    filter: blur(60px);
+}
+
 .taskforce-container {
-    max-width: 1300px;
-    margin: 0 auto;
+    max-width: 1400px;
+    margin: -220px auto 0;
+    position: relative;
+    z-index: 10;
 }
 
 .taskforce-minimal-header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5rem;
     padding: 2rem 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding-bottom: 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--bg-dark);
+    position: relative;
+    text-align: center;
+}
+
+.title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
 }
 
 .clean-title {
-    font-size: 3rem;
-    font-weight: 800;
+    font-size: 6.5rem;
+    font-weight: 950;
     color: var(--text-main);
     margin: 0;
-    letter-spacing: -1px;
+    line-height: 0.8;
+    letter-spacing: -4px;
     text-transform: uppercase;
-    padding-left: 8rem;
-    /* Space for the global menu button */
+    background: linear-gradient(90deg, #fff, #ff1e1e, #fff);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 40px rgba(255, 30, 30, 0.5));
+    animation: shine 5s linear infinite;
 }
 
-.minimal-tabs {
-    display: flex;
-    gap: 1.5rem;
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
 }
 
-.taskforce-controls {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-}
-
-/* Old pagination styles removed */
-
-.min-tab {
-    background: transparent;
-    border: none;
-    color: var(--text-muted);
+.clean-subtitle {
     font-family: var(--mono-font);
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 1rem;
+    color: #ff4d4d;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    padding: 0.5rem 0;
-    position: relative;
-    transition: color 0.3s ease;
+    letter-spacing: 0.35rem;
+    font-weight: 700;
+    margin: 0;
+    background: rgba(255, 30, 30, 0.05);
+    padding: 0.6rem 2.5rem;
+    border: 1px solid rgba(255, 30, 30, 0.2);
+    border-radius: 4px;
+    backdrop-filter: blur(10px);
 }
 
-.min-tab:hover {
-    color: var(--text-main);
-}
 
-.min-tab.active {
-    color: var(--primary);
-}
-
-.min-tab.active::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--primary);
-    box-shadow: 0 0 10px var(--primary);
-}
 
 /* Taskforce Grid */
 .taskforce-grid-wrap {
@@ -175,14 +218,24 @@
 
 .taskforce-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 3.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 4rem;
     justify-items: center;
 }
 
 .taskforce-item {
     width: 100%;
-    max-width: 350px;
+    max-width: 360px;
+    background: var(--card-surface);
+    border-radius: 20px;
+    position: relative;
+    border: 1px solid rgba(255, 30, 30, 0.05);
+    transition: all 0.5s ease;
+}
+
+.taskforce-item:hover {
+    border-color: rgba(255, 30, 30, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 30, 30, 0.1);
 }
 
 /* Rest of styles remain ... */
@@ -217,37 +270,30 @@
 /* TiltedCard Overlay Content Styling (Always Visible) */
 .card-overlay-content {
     position: absolute;
-    bottom: 20px;
-    left: 15px;
-    right: 15px;
-    padding: 1rem 1.25rem;
-    background: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 30, 30, 0.15);
-    border-radius: 12px;
+    bottom: 25px;
+    left: 20px;
+    right: 20px;
+    padding: 1.5rem;
+    background: rgba(20, 5, 5, 0.85);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 30, 30, 0.2);
+    border-radius: 16px;
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 0.3rem;
     color: white;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .taskforce-item:hover .card-overlay-content {
-    background: rgba(0, 0, 0, 0.85);
-    border-color: rgba(255, 30, 30, 0.4);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(255, 30, 30, 0.1);
+    background: rgba(40, 5, 5, 0.95);
+    border-color: var(--primary);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(255, 30, 30, 0.2);
 }
 
-.overlay-badge {
-    font-family: var(--mono-font);
-    font-size: 0.65rem;
-    color: var(--primary);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-weight: 700;
-}
+
 
 .overlay-title {
     font-size: 1.2rem;
@@ -295,19 +341,25 @@
 
 @media (max-width: 768px) {
     .taskforce-minimal-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+
+    .title-group {
+        padding-left: 4rem;
+        gap: 0.5rem;
     }
 
     .clean-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        letter-spacing: -1px;
     }
 
-    .minimal-tabs {
-        flex-wrap: wrap;
-        gap: 1rem;
+    .clean-subtitle {
+        font-size: 0.65rem;
+        letter-spacing: 0.1rem;
     }
+
+
 
     .taskforce-grid {
         grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));

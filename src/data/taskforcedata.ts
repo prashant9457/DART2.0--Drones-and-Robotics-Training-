@@ -15,12 +15,12 @@ import AshishImg from '../assets/team/ashish.png';
 import AbunasarImg from '../assets/team/abunasar.png';
 import DrAmitImg from '../assets/team/dr.amit.png';
 import priyaImg from '../assets/team/priya.png';
+import abhishekImg from '../assets/team/abhishek.png';
 
 export interface TaskforceMember {
     id: number;
     name: string;
     role: string;
-    category: "Faculty" | "Tech Team" | "Volunteers";
     dept: "CSE" | "ME" | "EEE" | string;
     year?: string;
     image: string;
@@ -35,7 +35,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 1,
         name: "Dr. Dhirendra Kumar Verma",
         role: "Assistant Professor",
-        category: "Faculty",
         dept: "ME",
         image: DhirendraImg,
         linkedin: "https://www.linkedin.com/in/dr-dhirendra-kumar-verma-32a78a121/"
@@ -44,7 +43,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 2,
         name: "Dr. Kamal Narayan Baruah",
         role: "Associate Professor",
-        category: "Faculty",
         dept: "Biotechnology",
         image: KamalImg,
         linkedin: "https://www.linkedin.com/in/dr-kamal-narayan-baruah-33579aa4/"
@@ -53,7 +51,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 3,
         name: "Dr. Amit Bhola",
         role: "Assistant Professor",
-        category: "Faculty",
         dept: "CSE",
         image: DrAmitImg,
         linkedin: "https://www.linkedin.com/in/amit-bhola/"
@@ -62,7 +59,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 4,
         name: "Dr. C. Mohan",
         role: "Professor",
-        category: "Faculty",
         dept: "EE",
         image: CMohanImg,
         linkedin: "https://linkedin.com"
@@ -72,7 +68,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 5,
         name: "Prashant Singh",
         role: "Lead Coordinator",
-        category: "Tech Team",
         dept: "B.Tech CSE",
         year: "2",
         image: PrashantImg,
@@ -82,7 +77,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 6,
         name: "Vishwa Bhaskar Shukla",
         role: "Technical Lead",
-        category: "Tech Team",
         dept: "B.Tech CSE",
         year: "2",
         image: VishwaImg,
@@ -92,7 +86,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 7,
         name: "Arjun Agarwal",
         role: "Technical Lead",
-        category: "Tech Team",
         dept: "B.Tech ME",
         year: "2",
         image: ArjunImg,
@@ -102,7 +95,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 8,
         name: "Ayushi Singhal",
         role: "Management",
-        category: "Tech Team",
         dept: "B.Tech CSE",
         year: "2",
         image: AyushiImg,
@@ -112,7 +104,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 9,
         name: "Alisha Mohapatra",
         role: "AI/ML Engineer",
-        category: "Tech Team",
         dept: "B.Tech CSE",
         year: "2",
         image: AlishaImg,
@@ -123,7 +114,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 10,
         name: "Rushikesh Mande",
         role: "Finance Lead",
-        category: "Volunteers",
         dept: "B.Tech CSE",
         year: "2",
         image: RushikeshImg,
@@ -133,7 +123,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 11,
         name: "Vedanshi",
         role: "Creative Head",
-        category: "Tech Team",
         dept: "B.Tech CSE",
         year: "2",
         image: VedanshiImg,
@@ -141,9 +130,17 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
     },
     {
         id: 12,
+        name: "Abhishek",
+        role: "Tech Team",
+        dept: "B.Tech CSE",
+        year: "2",
+        image: abhishekImg,
+        linkedin: "https://www.linkedin.com/in/1abhishekpandey2/"
+    },
+    {
+        id: 22,
         name: "Ashish Kumar Pal",
         role: "Logistics",
-        category: "Volunteers",
         dept: "B.Tech CSE",
         year: "1",
         image: AshishImg,
@@ -153,7 +150,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 13,
         name: "Hargun Singh",
         role: "Public Relations",
-        category: "Volunteers",
         dept: "CSE",
         year: "1",
         image: PLACEHOLDER_IMAGE,
@@ -163,7 +159,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 14,
         name: "Krishna Shah",
         role: "Event Management",
-        category: "Volunteers",
         dept: "EEE",
         year: "1",
         image: KrishnaImg,
@@ -173,7 +168,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 15,
         name: "Rakshit Chauhan",
         role: "Tech Support",
-        category: "Volunteers",
         dept: "CSE",
         year: "2",
         image: PLACEHOLDER_IMAGE,
@@ -183,7 +177,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 16,
         name: "Sharamjeet Shaurya",
         role: "Field Coordinator",
-        category: "Volunteers",
         dept: "ME",
         year: "2",
         image: PLACEHOLDER_IMAGE,
@@ -193,7 +186,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 17,
         name: "Priya",
         role: "Social Media",
-        category: "Volunteers",
         dept: "EEE",
         year: "1",
         image: priyaImg,
@@ -203,7 +195,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 18,
         name: "Rashi Chauhan",
         role: "Documentation",
-        category: "Volunteers",
         dept: "CSE",
         year: "1",
         image: PLACEHOLDER_IMAGE,
@@ -213,7 +204,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 19,
         name: "Kashan Iqbal",
         role: "Embedded Systems",
-        category: "Volunteers",
         dept: "EEE",
         year: "2",
         image: PLACEHOLDER_IMAGE,
@@ -223,7 +213,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 20,
         name: "Bilal",
         role: "Hardware Support",
-        category: "Volunteers",
         dept: "ME",
         year: "1",
         image: PLACEHOLDER_IMAGE,
@@ -233,7 +222,6 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 21,
         name: "AbuNasar",
         role: "Volunteer",
-        category: "Volunteers",
         dept: "CSE",
         year: "1",
         image: AbunasarImg,
@@ -243,10 +231,10 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         id: 22,
         name: "Kanishq",
         role: "Volunteer",
-        category: "Volunteers",
         dept: "CSE",
         year: "1",
         image: KanishqImg,
         linkedin: "https://linkedin.com"
     }
+
 ];

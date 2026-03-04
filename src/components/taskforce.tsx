@@ -1,34 +1,22 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import TiltedCard from './tiltedcard';
 import { motion, AnimatePresence } from 'motion/react';
 import { Linkedin, ChevronLeft, ChevronRight } from 'lucide-react';
 import { TASKFORCE_MEMBERS } from '../data/taskforcedata';
+import type { TaskforceMember } from '../data/taskforcedata';
+import bannerImg from '../assets/team/banner.png';
 import './taskforce.css';
 
-const CATEGORIES = ["All", "Faculty", "Tech Team", "Volunteers"];
 const ITEMS_PER_PAGE = 6;
 
 const Taskforce: React.FC = () => {
-  const [activeTab, setActiveTab] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Reset page when category changes
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [activeTab]);
-
-  const filteredMembers = useMemo(() => {
-    const filtered = activeTab === "All" 
-      ? TASKFORCE_MEMBERS 
-      : TASKFORCE_MEMBERS.filter(m => m.category === activeTab);
-    return filtered;
-  }, [activeTab]);
-
-  const totalPages = Math.ceil(filteredMembers.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(TASKFORCE_MEMBERS.length / ITEMS_PER_PAGE);
   const currentMembers = useMemo(() => {
     const start = (currentPage - 1) * ITEMS_PER_PAGE;
-    return filteredMembers.slice(start, start + ITEMS_PER_PAGE);
-  }, [filteredMembers, currentPage]);
+    return TASKFORCE_MEMBERS.slice(start, start + ITEMS_PER_PAGE);
+  }, [currentPage]);
 
   const handleNext = () => {
     if (currentPage < totalPages) setCurrentPage(prev => prev + 1);
@@ -39,30 +27,36 @@ const Taskforce: React.FC = () => {
   };
 
   return (
-    <section className="taskforce-section" id="team">
+    <section className="taskforce-section red-theme" id="team">
+      <div className="taskforce-banner-wrap">
+        <img src={bannerImg} alt="DART Taskforce Banner" className="taskforce-banner-img" />
+        <div className="banner-overlay"></div>
+      </div>
+      
+      <div className="red-theme-decor">
+        <div className="red-glow-1"></div>
+        <div className="red-glow-2"></div>
+      </div>
+
       <div className="taskforce-container">
         
         <header className="taskforce-minimal-header">
-           <motion.h2 
-             initial={{ opacity: 0, x: -20 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             className="clean-title"
-           >
-             Taskforce
-           </motion.h2>
-           
-           <div className="taskforce-controls">
-             <div className="minimal-tabs">
-                  {CATEGORIES.map((cat) => (
-                    <button
-                      key={cat}
-                      className={`min-tab cursor-target ${activeTab === cat ? 'active' : ''}`}
-                      onClick={() => setActiveTab(cat)}
-                    >
-                      {cat}
-                    </button>
-                  ))}
-              </div>
+           <div className="title-group">
+             <motion.h2 
+               initial={{ opacity: 0, x: -20 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               className="clean-title"
+             >
+               Taskforce
+             </motion.h2>
+             <motion.p 
+               initial={{ opacity: 0, x: -20 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               transition={{ delay: 0.2 }}
+               className="clean-subtitle"
+             >
+               Team of Professors and Students who made DART Possible
+             </motion.p>
            </div>
         </header>
 
@@ -98,7 +92,7 @@ const Taskforce: React.FC = () => {
             className="taskforce-grid"
           >
             <AnimatePresence mode='popLayout'>
-              {currentMembers.map((member) => (
+              {currentMembers.map((member: TaskforceMember) => (
                 <motion.div
                   key={member.id}
                   layout
@@ -134,7 +128,6 @@ const Taskforce: React.FC = () => {
                           </a>
                         )}
                         <div className="card-overlay-content">
-                          <div className="overlay-badge">{member.category}</div>
                           <h3 className="overlay-title">{member.name}</h3>
                           <p className="overlay-subtitle">{member.role}</p>
                           <div className="overlay-meta">
