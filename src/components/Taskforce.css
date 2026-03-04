@@ -1,0 +1,316 @@
+:root {
+    --primary: #ff1e1e;
+    --bg-dark: #09090b;
+    --text-main: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.4);
+    --mono-font: 'JetBrains Mono', monospace;
+}
+
+.taskforce-section {
+    padding: 8rem 2rem;
+    background-color: var(--bg-dark);
+    min-height: 800px;
+    position: relative;
+    overflow: clip;
+}
+
+.taskforce-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.taskforce-minimal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg-dark);
+}
+
+.clean-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    padding-left: 8rem;
+    /* Space for the global menu button */
+}
+
+.minimal-tabs {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.taskforce-controls {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* Old pagination styles removed */
+
+.min-tab {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-family: var(--mono-font);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.min-tab:hover {
+    color: var(--text-main);
+}
+
+.min-tab.active {
+    color: var(--primary);
+}
+
+.min-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+}
+
+/* Taskforce Grid */
+.taskforce-grid-wrap {
+    padding: 2rem 0;
+    min-height: 1100px;
+    position: relative;
+    /* Anchor for side pagination */
+}
+
+.side-pagination {
+    position: absolute;
+    top: 50%;
+    left: -5vw;
+    right: -5vw;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@media (max-width: 1500px) {
+    .side-pagination {
+        left: -20px;
+        right: -20px;
+    }
+}
+
+.side-pagi-btn {
+    pointer-events: auto;
+    /* Re-enable for buttons */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 30, 30, 0.2);
+    color: var(--text-muted);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    backdrop-filter: blur(10px);
+}
+
+.side-pagi-btn:hover:not(:disabled) {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(255, 30, 30, 0.4);
+    transform: scale(1.1);
+}
+
+.side-pagi-btn.prev:hover:not(:disabled) {
+    transform: scale(1.1) translateX(-5px);
+}
+
+.side-pagi-btn.next:hover:not(:disabled) {
+    transform: scale(1.1) translateX(5px);
+}
+
+.side-pagi-btn:disabled {
+    opacity: 0.1;
+    cursor: not-allowed;
+}
+
+.side-pagi-indicator {
+    position: absolute;
+    bottom: -550px;
+    /* Offset from center point of grid */
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--mono-font);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: rgba(255, 30, 30, 0.05);
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 30, 30, 0.1);
+    white-space: nowrap;
+}
+
+.taskforce-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 3.5rem;
+    justify-items: center;
+}
+
+.taskforce-item {
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Rest of styles remain ... */
+
+/* Card LinkedIn (Always Visible) */
+.card-linkedin-link-always {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 50;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 30, 30, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-linkedin-link-always:hover {
+    background: #0077b5;
+    border-color: #0077b5;
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 0 20px rgba(0, 119, 181, 0.6);
+}
+
+/* TiltedCard Overlay Content Styling (Always Visible) */
+.card-overlay-content {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    right: 15px;
+    padding: 1rem 1.25rem;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 30, 30, 0.15);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.taskforce-item:hover .card-overlay-content {
+    background: rgba(0, 0, 0, 0.85);
+    border-color: rgba(255, 30, 30, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 30, 30, 0.1);
+}
+
+.overlay-badge {
+    font-family: var(--mono-font);
+    font-size: 0.65rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+}
+
+.overlay-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.overlay-subtitle {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+.overlay-handle {
+    font-family: var(--mono-font);
+    font-size: 0.75rem;
+    color: var(--primary);
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+
+.overlay-meta {
+    margin-top: 0.6rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid rgba(255, 30, 30, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--mono-font);
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.overlay-dept {
+    color: var(--primary);
+    background: rgba(255, 30, 30, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+}
+
+.overlay-year {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    .taskforce-minimal-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .clean-title {
+        font-size: 2.5rem;
+    }
+
+    .minimal-tabs {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .taskforce-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 2rem;
+    }
+}

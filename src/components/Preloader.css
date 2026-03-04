@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;800;900&display=swap");
+
+.pl-root {
+  position: fixed;
+  inset: 0;
+  background: #0a0a0f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Outfit", sans-serif;
+  z-index: 9999;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.pl-text {
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  animation: textIn 0.8s ease forwards;
+  text-align: center;
+}
+
+.pl-text span {
+  font-weight: 300;
+  font-style: italic;
+  opacity: 0.6;
+}
+
+/* Entry */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes textIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Exit */
+.pl-exit {
+  animation: fadeOut 0.8s ease forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
