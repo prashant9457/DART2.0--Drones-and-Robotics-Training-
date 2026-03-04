@@ -1,9 +1,9 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import TiltedCard from './TiltedCard';
+import TiltedCard from './tiltedcard';
 import { motion, AnimatePresence } from 'motion/react';
 import { Linkedin, ChevronLeft, ChevronRight } from 'lucide-react';
-import { TASKFORCE_MEMBERS } from '../data/taskforceData';
-import './Taskforce.css';
+import { TASKFORCE_MEMBERS } from '../data/taskforcedata';
+import './taskforce.css';
 
 const CATEGORIES = ["All", "Faculty", "Tech Team", "Volunteers"];
 const ITEMS_PER_PAGE = 6;

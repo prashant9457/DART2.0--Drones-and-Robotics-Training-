@@ -1,20 +1,20 @@
 // Image imports
-import AlishaImg from '../assets/Team/Alisha.png';
-import ArjunImg from '../assets/Team/Arjun.png';
-import AyushiImg from '../assets/Team/Ayushi.png';
-import CMohanImg from '../assets/Team/Dr.C.Mohan.png';
-import DhirendraImg from '../assets/Team/Dr.Dhirendra.png';
-import KamalImg from '../assets/Team/Dr.Kamal.png';
-import KrishnaImg from '../assets/Team/KrishnaShah.png';
-import PrashantImg from '../assets/Team/Prashant.png';
-import VedanshiImg from '../assets/Team/Vedanshi.png';
-import VishwaImg from '../assets/Team/VishwaBhaskar.png';
-import KanishqImg from '../assets/Team/kanishq.png';
-import RushikeshImg from '../assets/Team/Rushikesh.png';
-import AshishImg from '../assets/Team/Ashish.png';
-import AbunasarImg from '../assets/Team/Abunasar.png';
-import DrAmitImg from '../assets/Team/Dr.Amit.png';
-import priyaImg from '../assets/Team/Priya.png';
+import AlishaImg from '../assets/team/alisha.png';
+import ArjunImg from '../assets/team/arjun.png';
+import AyushiImg from '../assets/team/ayushi.png';
+import CMohanImg from '../assets/team/dr.c.mohan.png';
+import DhirendraImg from '../assets/team/dr.dhirendra.png';
+import KamalImg from '../assets/team/dr.kamal.png';
+import KrishnaImg from '../assets/team/krishnashah.png';
+import PrashantImg from '../assets/team/prashant.png';
+import VedanshiImg from '../assets/team/vedanshi.png';
+import VishwaImg from '../assets/team/vishwabhaskar.png';
+import KanishqImg from '../assets/team/kanishq.png';
+import RushikeshImg from '../assets/team/rushikesh.png';
+import AshishImg from '../assets/team/ashish.png';
+import AbunasarImg from '../assets/team/abunasar.png';
+import DrAmitImg from '../assets/team/dr.amit.png';
+import priyaImg from '../assets/team/priya.png';
 
 export interface TaskforceMember {
     id: number;

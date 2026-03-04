@@ -1,9 +1,9 @@
 import React from 'react';
-import './Home.css';
-import RotatingText from './RotatingText';
-import FloatingLines from './FloatingLines';
+import './home.css';
+import RotatingText from './rotatingtext';
+import FloatingLines from './floatinglines';
 import { motion } from 'motion/react';
-import Magnet from './Magnet';
+import Magnet from './magnet';
 
 const Home: React.FC = () => {
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./PreLoader.css";
+import "./preloader.css";
 
 interface PreLoaderProps {
   onComplete?: () => void;

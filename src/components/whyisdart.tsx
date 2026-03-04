@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './WhyIsDart.css';
-import ElectricBorder from './ElectricBorder';
-import LaserFlow from './LaserFlow';
+import './whyisdart.css';
+import ElectricBorder from './electricborder';
+import LaserFlow from './laserflow';
 import { motion } from 'motion/react';
 import { Zap, Shield, Target } from 'lucide-react';
 

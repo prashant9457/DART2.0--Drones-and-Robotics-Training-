@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useCallback, useMemo } from 'react';
 import { gsap } from 'gsap';
-import './WhatIsDart.css';
+import './whatisdart.css';
 
 // --- Types & Defaults ---
 const DEFAULT_PARTICLE_COUNT = 20;

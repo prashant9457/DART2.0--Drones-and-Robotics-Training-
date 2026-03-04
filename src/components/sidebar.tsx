@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { StaggeredMenu, type StaggeredMenuItem } from './StaggeredMenu';
-import './Sidebar.css';
+import { StaggeredMenu, type StaggeredMenuItem } from './staggeredmenu';
+import './sidebar.css';
 
 const Sidebar: React.FC = () => {
     useEffect(() => {

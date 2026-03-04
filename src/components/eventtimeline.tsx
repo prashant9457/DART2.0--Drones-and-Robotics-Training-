@@ -1,5 +1,5 @@
 import React from 'react';
-import './Timeline.css';
+import './timeline.css';
 
 const EventTimeline: React.FC = () => {
   const events = [
