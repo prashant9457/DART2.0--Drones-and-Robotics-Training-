@@ -16,6 +16,7 @@ import AbunasarImg from '../assets/team/abunasar.png';
 import DrAmitImg from '../assets/team/dr.amit.png';
 import priyaImg from '../assets/team/priya.png';
 import abhishekImg from '../assets/team/abhishek.png';
+// import rimmyImg from '../assets/team/rimmy.png';
 
 export interface TaskforceMember {
     id: number;
@@ -233,6 +234,15 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         role: "Volunteer",
         dept: "CSE",
         year: "1",
+        image: KanishqImg,
+        linkedin: "https://linkedin.com"
+    },
+    {
+        id: 23,
+        name: "Rimmy",
+        role: "Design Lead",
+        dept: "B.Tech CSE",
+        year: "2",
         image: KanishqImg,
         linkedin: "https://linkedin.com"
     }

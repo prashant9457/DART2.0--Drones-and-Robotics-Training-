@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { StaggeredMenu, type StaggeredMenuItem } from './staggeredmenu';
+import logo from '../assets/logo.png';
 import './sidebar.css';
 
 const Sidebar: React.FC = () => {
@@ -25,19 +26,17 @@ const Sidebar: React.FC = () => {
     }, []);
 
     const menuItems: StaggeredMenuItem[] = [
-        { label: 'Home', ariaLabel: 'Go to Home', link: '#home' },
-        { label: 'About', ariaLabel: 'Go to About', link: '#what-is-dart' },
-        { label: 'Key Insights', ariaLabel: 'Go to Key Insights', link: '#why-attend' },
-        { label: 'Skills', ariaLabel: 'Go to Skills', link: '#skills' },
-        { label: 'Timeline', ariaLabel: 'Go to Timeline', link: '#timeline' },
-        { id: 'speakers', label: 'Speakers', ariaLabel: 'Go to Speakers', link: '#speakers' },
-        { label: 'Taskforce', ariaLabel: 'Go to Taskforce', link: '#team' },
-        { label: 'Legacy', ariaLabel: 'Go to Legacy', link: '#dart1' },
-        { label: 'FAQs', ariaLabel: 'Go to FAQs', link: '#faqs' },
+        { label: 'Home', ariaLabel: 'Go to Home', link: '/' },
+        { label: 'About', ariaLabel: 'Go to About', link: '/#what-is-dart' },
+        { label: 'Key Insights', ariaLabel: 'Go to Key Insights', link: '/insights' },
+        { label: 'Timeline', ariaLabel: 'Go to Timeline', link: '/timeline' },
+        { label: 'Skills', ariaLabel: 'Go to Skills', link: '/#skills' },
+        { label: 'Speakers', ariaLabel: 'Go to Speakers', link: '/#speakers' },
+        { label: 'Taskforce', ariaLabel: 'Go to Taskforce', link: '/#team' },
+        { label: 'Legacy', ariaLabel: 'Go to Legacy', link: '/#dart1' },
+        { label: 'FAQs', ariaLabel: 'Go to FAQs', link: '/#faqs' },
     ].map(item => ({
         ...item,
-        // We can't easily pass custom styles per item to StaggeredMenu, 
-        // but we'll manage the active state through the items array if needed or via CSS
     }));
 
     return (
@@ -48,7 +47,7 @@ const Sidebar: React.FC = () => {
                 isFixed={true}
                 accentColor="#ffffffff"
                 colors={['#f4f4f4ff', '#ddddddff', '#1f0101ff']}
-                logoUrl="/DART_LOGO.png" // placeholder or correct path
+                logoUrl={logo} // placeholder or correct path
                 displayItemNumbering={true}
                 displaySocials={true}
                 socialItems={[

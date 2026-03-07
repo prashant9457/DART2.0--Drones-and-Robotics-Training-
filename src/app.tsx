@@ -1,25 +1,17 @@
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './app.css';
-import Home from './components/home';
-import WhatIsDart from './components/whatisdart';
-import WhyIsDart from './components/whyisdart';
-import KeyInsightsSkills from './components/keyinsightsskills';
-import EventTimeline from './components/eventtimeline';
-import SpeakersTrainers from './components/speakerstrainers';
-import Dart1 from './components/dart1';
-import HearfromOrganisers from './components/hearfromorganisers';
-import Taskforce from './components/taskforce';
-import FAQs from './components/faqs';
-import ContactandSupport from './components/contactandsupport';
-import Sidebar from './components/sidebar';
-import TargetCursor from './components/targetcursor';
-import Preloader from './components/preloader'; // Import the new component
+import Preloader from './components/preloader';
+import MainLayout from './components/mainlayout';
+import LandingPage from './components/landingpage';
+import InsightsPage from './components/insightspage';
+import TimelinePage from './components/timelinepage';
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Set a timer for the animation duration (e.g., 3 seconds)
+    // Set a timer for the animation duration (e.g., 3.5 seconds)
     const timer = setTimeout(() => {
       setLoading(false);
     }, 3500); 
@@ -32,23 +24,15 @@ function App() {
   }
 
   return (
-    <div className="app-container fade-in-page">
-      <Sidebar />
-      <main>
-        <Home />
-        <WhatIsDart />
-        <WhyIsDart />
-        <KeyInsightsSkills />
-        <EventTimeline />
-        <SpeakersTrainers />
-        <Dart1 />
-        <HearfromOrganisers />
-        <Taskforce />
-        <FAQs />
-        <ContactandSupport />
-      </main>
-      <TargetCursor targetSelector="a, button, .cursor-target" />
-    </div>
+    <Router>
+      <MainLayout>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/insights" element={<InsightsPage />} />
+          <Route path="/timeline" element={<TimelinePage />} />
+        </Routes>
+      </MainLayout>
+    </Router>
   );
 }
 
