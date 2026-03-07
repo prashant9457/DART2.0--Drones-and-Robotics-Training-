@@ -24,11 +24,11 @@ export interface TaskforceMember {
     role: string;
     dept: "CSE" | "ME" | "EEE" | string;
     year?: string;
-    image: string;
+    image: string | null;
     linkedin?: string;
 }
 
-const PLACEHOLDER_IMAGE = "https://i.pravatar.cc/300?u=placeholder";
+const PLACEHOLDER_IMAGE = null;
 
 export const TASKFORCE_MEMBERS: TaskforceMember[] = [
     // Faculty
@@ -243,7 +243,7 @@ export const TASKFORCE_MEMBERS: TaskforceMember[] = [
         role: "Design Lead",
         dept: "B.Tech CSE",
         year: "2",
-        image: KanishqImg,
+        image: PLACEHOLDER_IMAGE,
         linkedin: "https://linkedin.com"
     }
 

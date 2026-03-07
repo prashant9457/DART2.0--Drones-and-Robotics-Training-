@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'motion/react';
 
 interface TiltedCardProps {
-  imageSrc: React.ComponentProps<'img'>['src'];
+  imageSrc: React.ComponentProps<'img'>['src'] | null;
   altText?: string;
   captionText?: string;
   containerHeight?: React.CSSProperties['height'];
@@ -116,15 +116,27 @@ export default function TiltedCard({
           scale
         }}
       >
-        <motion.img
-          src={imageSrc}
-          alt={altText}
-          className="absolute top-0 left-0 object-cover rounded-[15px] will-change-transform [transform:translateZ(0)]"
-          style={{
-            width: imageWidth,
-            height: imageHeight
-          }}
-        />
+        {imageSrc ? (
+          <motion.img
+            src={imageSrc}
+            alt={altText}
+            className="absolute top-0 left-0 object-cover rounded-[15px] will-change-transform [transform:translateZ(0)]"
+            style={{
+              width: imageWidth,
+              height: imageHeight
+            }}
+          />
+        ) : (
+          <div 
+            className="absolute top-0 left-0 flex items-center justify-center rounded-[15px] bg-zinc-900/50 border border-white/5"
+            style={{
+              width: imageWidth,
+              height: imageHeight
+            }}
+          >
+            <div className="text-zinc-700 font-mono text-[10px] uppercase tracking-[0.2em] -rotate-45">No_Image_Available</div>
+          </div>
+        )}
 
         {displayOverlayContent && overlayContent && (
           <motion.div className="absolute top-0 left-0 w-full h-full z-[2] pointer-events-none will-change-transform [transform:translateZ(30px)]">
