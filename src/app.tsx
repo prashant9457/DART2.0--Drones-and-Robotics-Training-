@@ -6,6 +6,7 @@ import MainLayout from './components/mainlayout';
 import LandingPage from './components/landingpage';
 import InsightsPage from './components/insightspage';
 import TimelinePage from './components/timelinepage';
+import OrganisersPage from './components/organiserspage';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -30,6 +31,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/insights" element={<InsightsPage />} />
           <Route path="/timeline" element={<TimelinePage />} />
+          <Route path="/organisers" element={<OrganisersPage />} />
         </Routes>
       </MainLayout>
     </Router>

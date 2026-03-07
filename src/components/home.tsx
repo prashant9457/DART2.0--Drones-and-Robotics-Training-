@@ -50,7 +50,12 @@ const Home: React.FC = () => {
 
         <div className="hero-actions">
           <Magnet padding={80} magnetStrength={3}>
-            <a href="#contact" className="btn-industrial-primary">
+            <a 
+              href="https://dart-workshop.vercel.app/" 
+              className="btn-industrial-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span className="btn-glitch" />
               RESERVE_SPOT_NOW
             </a>

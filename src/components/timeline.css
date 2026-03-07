@@ -1,66 +1,61 @@
-.timeline-container {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    padding: 2rem 0;
+.timeline-stacked-layout {
+    perspective: 1500px;
+    padding-bottom: 5rem;
 }
 
-.timeline-container::before {
+.big-day-card {
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.03);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.big-day-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 40px 80px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(255, 255, 255, 0.05),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.small-event-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(5px);
+}
+
+.small-event-card::before {
     content: '';
     position: absolute;
     top: 0;
-    bottom: 0;
-    left: 20px;
-    width: 2px;
-    background: rgba(6, 182, 212, 0.2);
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: transparent;
+    transition: background 0.4s ease;
 }
 
-.timeline-item {
-    position: relative;
-    padding-left: 60px;
-    margin-bottom: 2.5rem;
+.small-event-card:hover::before {
+    background: #ffffff !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
-.timeline-dot {
-    position: absolute;
-    left: 14px;
-    top: 24px;
-    width: 14px;
-    height: 14px;
-    background: var(--accent-cyan);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--accent-cyan);
+.event-icon {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.timeline-time {
-    display: inline-block;
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
-}
-
-.timeline-item h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-}
-
-.timeline-item p {
-    color: var(--text-secondary);
-    font-size: 1rem;
+.day-header-v3 h2 {
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 768px) {
-    .timeline-container::before {
-        left: 15px;
+    .big-day-card {
+        padding: 2rem 1.5rem !important;
+        border-radius: 30px !important;
     }
 
-    .timeline-item {
-        padding-left: 45px;
-    }
-
-    .timeline-dot {
-        left: 9px;
+    .events-grid-v3 {
+        grid-template-columns: 1fr !important;
     }
 }

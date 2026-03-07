@@ -6,7 +6,7 @@ import './sidebar.css';
 const Sidebar: React.FC = () => {
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['home', 'what-is-dart', 'why-attend', 'skills', 'timeline', 'speakers', 'team', 'dart1', 'faqs'];
+            const sections = ['home', 'what-is-dart', 'why-attend', 'skills', 'speakers', 'team', 'dart1', 'faqs'];
             const scrollPosition = window.scrollY + 200;
 
             for (const section of sections) {
