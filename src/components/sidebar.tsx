@@ -52,7 +52,6 @@ const Sidebar: React.FC = () => {
                 displaySocials={true}
                 socialItems={[
                     { label: 'Instagram', link: 'https://www.instagram.com/dart.workshop.2026/' },
-                    { label: 'LinkedIn', link: 'https://linkedin.com' }
                 ]}
             />
         </div>
